@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="Full scientific calculator with history"><title>Scientific Calculator — DevKit Tools</title><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="Full scientific calculator with history"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y=".9em" font-size='90'>🛠</text></svg>">
+<title>Scientific Calculator — DevKit Tools</title><style>
 :root{--bg:#0d1117;--surface:#161b22;--border:#30363d;--text:#c9d1d9;--accent:#58a6ff;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;align-items:center;padding:40px 16px;min-height:100vh;}
@@ -17,7 +19,7 @@ button.fn{color:#f0c040;font-size:13px;}
 .history{width:340px;margin-top:16px;max-height:200px;overflow-y:auto;}
 .history div{padding:8px 12px;border-bottom:1px solid var(--border);font-size:13px;cursor:pointer;display:flex;justify-content:space-between;}
 .history div:hover{background:var(--surface);}
-</style></head><body>
+*:focus-visible{outline:2px solid #58a6ff;outline-offset:2px}::selection{background:rgba(88,166,255,0.3);color:#fff}</style></head><body>
 <h1>🔢 Scientific Calculator</h1>
 <div class="calc">
 <div class="display"><div class="expr" id="expr"></div><div class="result" id="result">0</div></div>
@@ -32,6 +34,7 @@ button.fn{color:#f0c040;font-size:13px;}
 </div></div>
 <div class="history" id="history"></div>
 <script>
+'use strict';
 let expr='',history=[];
 function input(v){expr+=v;render()}
 function fn(f){if(f==='pi'){input(Math.PI.toFixed(6))}else{expr+=f+'(';render()}}
