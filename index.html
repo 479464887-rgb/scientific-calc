@@ -49,6 +49,7 @@ button.fn{color:#f0c040;font-size:13px;}
 </div></div>
 <div class="history" id="history"></div>
 <script>
+'use strict';
 let expr='',history=[];
 function input(v){expr+=v;render()}
 function fn(f){if(f==='pi'){input(Math.PI.toFixed(6))}else{expr+=f+'(';render()}}
